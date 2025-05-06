@@ -1,0 +1,24 @@
+{
+  "name": "PayPy PWA",
+  "short_name": "PayPy PWA",
+  "description": "A demonstration Progressive Web App built with SvelteKit.",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone", 
+  "background_color": "#ffffff",
+  "theme_color": "#3367D6", 
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icons-192.png", 
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable" 
+    },
+    {
+      "src": "/icons/icons-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
