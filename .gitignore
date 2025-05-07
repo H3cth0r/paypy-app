@@ -75,11 +75,11 @@ no_llvm_build
 /inst/
 /llvm/
 /mingw-build/
-/build
+# /build # Already covered by # Output section
 /build-rust-analyzer/
 /dist/
 /unicode-downloads
-/target
+/target # For target at the root, good to keep
 /library/target
 /src/bootstrap/target
 /src/ci/citool/target
@@ -112,7 +112,7 @@ __pycache__/
 *$py.class
 
 ## Node
-node_modules
+# node_modules # Already covered at the top
 package-lock.json
 package.json
 /src/doc/rustc-dev-guide/mermaid.min.js
@@ -130,3 +130,24 @@ flake.lock
 /default.nix
 
 # Before adding new lines, see the comment at the top.
+
+# === Rust / Cargo Project Artifacts ===
+# This section is for general Rust/Cargo projects within the repository,
+# like `paypy-wasm`.
+
+# Ignore all 'target' directories in any subdirectory.
+# This is crucial for Cargo build outputs in sub-projects.
+**/target/
+
+# Ignore Cargo.lock files in subdirectories.
+# For libraries within a monorepo, it's common to ignore these.
+# For standalone applications, you might want to track it.
+# If you want to track a specific Cargo.lock, use an exception:
+# !my_app/Cargo.lock
+**/Cargo.lock
+
+# Local Cargo configuration (already covered by `.cargo` rule above, but good to be aware)
+# .cargo/config.toml
+
+# Rustc Internal Compiler Error (ICE) reports (already covered by `rustc-ice-*.txt` rule above)
+# rustc-ice-*.txt
