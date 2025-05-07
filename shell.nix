@@ -14,6 +14,9 @@ pkgs.mkShell {
     cargo              # Rust package manager and build tool
     wasm-pack          # Tool for building Rust-Wasm packages for the web
 
+    clang
+    lld
+
     # --- Optional Build Tools (sometimes needed by Rust build scripts) ---
     # Add these if you encounter build errors related to native dependencies
     # in Rust crates (e.g., crates using C libraries via FFI).
